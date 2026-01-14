@@ -4,8 +4,8 @@ import Calculator from '../src/components/Calculadora/calculadora';
 
 export default function Index() {
   return (
-    <View>
-      <Calculator/>
+    <View style={{ flex: 1 }}>
+      <Calculator />
     </View>
   );
 }
