@@ -1,13 +1,14 @@
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
+import { useCalculator } from './script';
 
 export default function Calculator() {
   return (
     <View style={styles.containerCalculadora}>
         {/* Vou fazer umas anotações para fixar alguns padrões */}
         <View style={styles.displayContainer}>
-            <Text style={{color:'white', fontSize: 60}}>0</Text>
+            <Text style={{color:'white', fontSize: 60}}>displayValue</Text>
         </View>
 
         {/* Container que segura todas as linhas, ele deve existir para fazer um grid improvisado com os botões */}
@@ -34,15 +35,15 @@ export default function Calculator() {
 
             {/* faço outra linha com o ROW aí eu garanto que todos os elementos dentro dela vão estar organizados e abaixo da anterior */}
             <View style={styles.row}>
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(7)}>
                     <Text style={styles.numberText}>7</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(8)}>
                     <Text style={styles.numberText}>8</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(9)}>
                     <Text style={styles.numberText}>9</Text>
                 </TouchableOpacity>
 
@@ -53,15 +54,15 @@ export default function Calculator() {
 
             {/* LINHA 3 */}
             <View style={styles.row}>
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(4)}>
                     <Text style={styles.numberText}>4</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(5)}>
                     <Text style={styles.numberText}>5</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(6)}>
                     <Text style={styles.numberText}>6</Text>
                 </TouchableOpacity>
 
@@ -72,15 +73,15 @@ export default function Calculator() {
 
             {/* LINHA 4 */}
             <View style={styles.row}>
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(1)}>
                     <Text style={styles.numberText}>1</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(2)}>
                     <Text style={styles.numberText}>2</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(3)}>
                     <Text style={styles.numberText}>3</Text>
                 </TouchableOpacity>
 
@@ -91,7 +92,7 @@ export default function Calculator() {
 
             {/* LINHA 5 */}
             <View style={styles.row}>   
-                <TouchableOpacity style={styles.numberButton}>
+                <TouchableOpacity style={styles.numberButton}  onPress={() => addNumber(0)}>
                     <Text style={styles.numberText}>0</Text>
                 </TouchableOpacity>
 
