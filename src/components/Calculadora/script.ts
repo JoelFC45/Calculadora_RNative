@@ -37,12 +37,28 @@ function addOperator(op: string) {
     setDisplayValue(currentValue => currentValue.slice(0, -1));
   }
 }
+ function allClear() {
+    setDisplayValue('0');
+    setn1(0);
+    setOperator('');
+ }
+
+ function plusMinus() {
+    if (displayValue.startsWith('-')) {
+      setDisplayValue(displayValue.slice(1));
+    }else {
+      setDisplayValue('-' + displayValue);
+    }
+  }
+
 
   return {
     addNumber,
     addOperator,
     doting,
     displayValue,
-    deleting
+    deleting,
+    allClear,
+    plusMinus
   };
 }
