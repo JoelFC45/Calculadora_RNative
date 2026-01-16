@@ -10,8 +10,8 @@ export function useCalculator()  {
 
 
 //addNumber adiciona um número ao display que é uma variável de estado que guarda o valor atual mostrado na tela da calculadora.
-function addNumber(number: number): void {
-    setDisplayValue(currentValue => (currentValue + number));
+function addNumber(number: number) {
+    setDisplayValue(currentValue => currentValue + number);
   }
 }
  

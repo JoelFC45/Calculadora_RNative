@@ -2,6 +2,12 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { useCalculator } from './script';
+export default function Calculator() {
+ const { 
+    addNumber
+  } = useCalculator();
+
+
 
 export default function Calculator() {
   return (
@@ -108,4 +114,5 @@ export default function Calculator() {
         </View>
     </View>
   );
+}
 }
