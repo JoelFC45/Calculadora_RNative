@@ -26,12 +26,23 @@ function addOperator(op: string) {
       return;
     }
   }
+  function deleting () {
+    if (displayValue.length === 1) {
+      setDisplayValue('0');
+      return;
+    }
+    if (displayValue === '0') {
+      return;
+    } else {
+    setDisplayValue(currentValue => currentValue.slice(0, -1));
+  }
+}
 
   return {
     addNumber,
     addOperator,
     doting,
-    displayValue
+    displayValue,
+    deleting
   };
 }
- 

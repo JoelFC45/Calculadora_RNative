@@ -7,7 +7,8 @@ export default function Calculator() {
     addNumber,
     displayValue,
     addOperator,
-    doting
+    doting,
+    deleting
   } = useCalculator();
 
   return (
@@ -35,7 +36,7 @@ export default function Calculator() {
                 </TouchableOpacity>
                 
                 <TouchableOpacity style={styles.numberButton}>
-                    <Text style={[styles.numberText, {fontSize: 18}]}>DEL</Text>
+                    <Text style={[styles.numberText, {fontSize: 18}]} onPress ={() => deleting()}>DEL</Text>
                 </TouchableOpacity>
             </View>
 
@@ -102,7 +103,7 @@ export default function Calculator() {
                     <Text style={styles.numberText}>0</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.operationButton}>
+                <TouchableOpacity style={styles.operationButton} onPress={() => doting()}>
                     <Text style={styles.operationText}>.</Text>
                 </TouchableOpacity>
 
