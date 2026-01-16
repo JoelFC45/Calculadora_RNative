@@ -11,6 +11,7 @@ export default function Calculator() {
     deleting,
     allClear,
     plusMinus,
+    calculateResult
   } = useCalculator();
 
   return (
@@ -24,33 +25,23 @@ export default function Calculator() {
       <View style={styles.buttonsContainer}>
         {/* Usando o estilo ROW eu consigo organizar cada linha de botões e garantir que chegando no limite que eu coloquei o flex passa o botão pra proxima linha */}
         <View style={styles.row}>
-          <TouchableOpacity style={styles.operationButton}>
-            <Text style={styles.operationText} onPress={() => allClear()}>
-              AC
-            </Text>
+          <TouchableOpacity style={styles.operationButton}  onPress={() => allClear()}>
+        <Text style={styles.operationText}>AC</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.operationButton}
-            onPress={() => plusMinus}
-          >
-            <Text style={styles.operationText}>+/-</Text>
+            onPress={() => plusMinus}> <Text style={styles.operationText}>+/-</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.operationButton}
-            onPress={() => addNumber("/")}
-          >
-            <Text style={styles.operationText}>/</Text>
+            onPress={() => addOperator("/")}> <Text style={styles.operationText}>/</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.numberButton}>
+          <TouchableOpacity style={styles.numberButton } onPress={() => deleting()}>
             <Text
-              style={[styles.numberText, { fontSize: 18 }]}
-              onPress={() => deleting()}
-            >
-              DEL
-            </Text>
+              style={[styles.numberText, { fontSize: 18 }]}> DEL</Text>
           </TouchableOpacity>
         </View>
 
@@ -58,30 +49,22 @@ export default function Calculator() {
         <View style={styles.row}>
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("7")}
-          >
-            <Text style={styles.numberText}>7</Text>
+            onPress={() => addNumber("7")}><Text style={styles.numberText}>7</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("8")}
-          >
-            <Text style={styles.numberText}>8</Text>
+            onPress={() => addNumber("8")} ><Text style={styles.numberText}>8</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("9")}
-          >
-            <Text style={styles.numberText}>9</Text>
+            onPress={() => addNumber("9")}><Text style={styles.numberText}>9</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.operationButton}
-            onPress={() => addNumber("X")}
-          >
-            <Text style={styles.operationText}>X</Text>
+            onPress={() => addOperator("X")}><Text style={styles.operationText}>X</Text>
           </TouchableOpacity>
         </View>
 
@@ -89,30 +72,22 @@ export default function Calculator() {
         <View style={styles.row}>
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("4")}
-          >
-            <Text style={styles.numberText}>4</Text>
+            onPress={() => addNumber("4")}> <Text style={styles.numberText}>4</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("5")}
-          >
-            <Text style={styles.numberText}>5</Text>
+            onPress={() => addNumber("5")}> <Text style={styles.numberText}>5</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("6")}
-          >
-            <Text style={styles.numberText}>6</Text>
+            onPress={() => addNumber("6")}> <Text style={styles.numberText}>6</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.operationButton}
-            onPress={() => addNumber("-")}
-          >
-            <Text style={styles.operationText}>-</Text>
+            onPress={() => addOperator("-")}> <Text style={styles.operationText}>-</Text>
           </TouchableOpacity>
         </View>
 
@@ -120,30 +95,22 @@ export default function Calculator() {
         <View style={styles.row}>
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("1")}
-          >
-            <Text style={styles.numberText}>1</Text>
+            onPress={() => addNumber("1")}  > <Text style={styles.numberText}>1</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("2")}
-          >
-            <Text style={styles.numberText}>2</Text>
+            onPress={() => addNumber("2")}> <Text style={styles.numberText}>2</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("3")}
-          >
-            <Text style={styles.numberText}>3</Text>
+            onPress={() => addNumber("3")} > <Text style={styles.numberText}>3</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.operationButton}
-            onPress={() => addNumber("+")}
-          >
-            <Text style={styles.operationText}>+</Text>
+            onPress={() => addOperator("+")} > <Text style={styles.operationText}>+</Text>
           </TouchableOpacity>
         </View>
 
@@ -151,23 +118,17 @@ export default function Calculator() {
         <View style={styles.row}>
           <TouchableOpacity
             style={styles.numberButton}
-            onPress={() => addNumber("0")}
-          >
-            <Text style={styles.numberText}>0</Text>
+            onPress={() => addNumber("0")}><Text style={styles.numberText}>0</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.operationButton}
-            onPress={() => doting()}
-          >
-            <Text style={styles.operationText}>.</Text>
+            onPress={() => doting()} ><Text style={styles.operationText}>.</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.equalsButton}
-            onPress={() => addNumber("X")}
-          >
-            <Text style={styles.operationText}>=</Text>
+            onPress={() => calculateResult()}> <Text style={styles.operationText}>=</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -51,6 +51,30 @@ function addOperator(op: string) {
     }
   }
 
+  function calculateResult() {
+    const n2 = parseFloat(displayValue);
+    let result: Float | null = null;
+    
+    switch (operator) {
+      case '+':
+        result = (n1 ?? 0) + n2;
+        break;
+      case '-':
+        result = (n1 ?? 0) - n2;
+      case 'X':
+        result = (n1 ?? 0) * n2;
+        break;
+      case '/':
+        result = (n1 ?? 0) / n2;
+        break;
+      default:
+        return;
+    }
+    setDisplayValue(result.toString());
+    setn1(result);
+    setOperator('');
+  }
+
 
   return {
     addNumber,
@@ -59,6 +83,7 @@ function addOperator(op: string) {
     displayValue,
     deleting,
     allClear,
-    plusMinus
+    plusMinus,
+    calculateResult
   };
 }
