@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Float } from 'react-native/Libraries/Types/CodegenTypes';
 
 export function useCalculator()  {
-  // Vou fazer micro commits daqui para seguir melhor a preferencia de João Pedro aqui temos as variaveis de memória.
+  // Vou fazer micro commits daqui para seguir melhor o estilo micro-commits aqui temos as variaveis de memória.
   const [displayValue, setDisplayValue] = useState<string>('0');
   //Ok, aqui temos a variavel da tela, o Usestate define a variavel, o setter e o valor inicial, ainda me confundo um pouco com useState então vou comentar pra me ajudar re-fixar isso.
   const [n1, setn1] = useState <Float | null>(0);

@@ -4,14 +4,17 @@ import { styles } from './styles';
 import { useCalculator } from './script';
 export default function Calculator() {
  const { 
-    addNumber
+    addNumber,
+    displayValue,
+    addOperator,
+    doting
   } = useCalculator();
 
   return (
     <View style={styles.containerCalculadora}>
         {/* Vou fazer umas anotações para fixar alguns padrões */}
         <View style={styles.displayContainer}>
-            <Text style={{color:'white', fontSize: 60}}>displayValue</Text>
+            <Text style={{color:'white', fontSize: 60}}>{displayValue}</Text>
         </View>
 
         {/* Container que segura todas as linhas, ele deve existir para fazer um grid improvisado com os botões */}
